@@ -61,6 +61,60 @@ After running the generator, you can import components from `src/components/ui` 
 - Run `npx shadcn-ui init` to scaffold shadcn components
 - Add unit tests or Storybook if desired
 
+## Development & contributor guide
+
+Recommended local workflow (macOS / zsh):
+
+1. Clone the repo and install dependencies:
+
+```bash
+git clone https://github.com/JKang78/next-tailwind-shadcn.git
+cd next-tailwind-shadcn
+npm install
+```
+
+2. Run the dev server:
+
+```bash
+npm run dev
+```
+
+3. Before opening a PR run the checks:
+
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+```
+
+4. Open a pull request against `main`. The repository uses CI to run lint and build, so ensure local checks pass first.
+
+5. If you want to invite a coworker to the repo, run (replace USERNAME):
+
+```bash
+gh repo add-collaborator JKang78/next-tailwind-shadcn --user USERNAME
+```
+
+6. Branch naming / PR guidelines:
+
+- Use short, descriptive branch names like `feat/article-list` or `fix/header-style`.
+- Write a clear PR description and include the steps to reproduce, screenshots, and any migration notes.
+
+## Deployment
+
+This project is ready to deploy on Vercel. To deploy:
+
+1. Import the GitHub repository into Vercel and follow the setup flow (Vercel will detect Next.js).
+2. Ensure environment variables (if any) are added in the Vercel dashboard.
+
+## Contributing
+
+See `CONTRIBUTING.md` for more details on how to contribute.
+
+---
+
+If you'd like, I can also add a PR template and ISSUE templates to guide contributors — I already added a small PR template in `.github/PULL_REQUEST_TEMPLATE.md`.
+
 ## Troubleshooting
 
 If the dev server fails to start, check Node version and that dependencies installed cleanly.
