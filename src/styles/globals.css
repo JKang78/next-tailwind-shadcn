@@ -39,6 +39,25 @@ body {
 /* Prevent masthead overflow */
 .masthead { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
+/* Skip-link styles for accessibility */
+.skip-link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #111827; /* gray-900 */
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 60;
+  transform: translateY(-120%);
+  transition: transform 0.15s ease-in-out;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.sr-only-focusable:focus,
+.skip-link:focus {
+  transform: translateY(0%);
+}
+
 html, body, #__next {
   height: 100%;
 }
